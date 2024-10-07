@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <title>contact us</title>
+</head>
+<body>
+    <div class="background-effects"></div>
+    <div id="container">
+        <h1 id="animated-heading">CONTACT US ♥ </h1>
+        <form id="form">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="field">
+                <label for="class">Class</label>
+                <input type="text" name="class" id="class" placeholder="Enter your class">
+            </div>
+            <div class="field">
+                <label for="comment">Comment</label>
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+            </div>
+            <input type="submit" id="button" value="Send Email">
+        </form>
+    </div>
+    <button class="back-to-home">
+        <a href="home.html">Back to Home</a>
+    </button>
+    <a href="https://wa.me/923165218095" target="_blank" id="whatsapp-icon" title="Chat with us on WhatsApp">
+        <img src="WhatsApp_icon.png.webp" alt="WhatsApp">
+    </a>
+</body>
+
+  
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script type="text/javascript">
+    emailjs.init('ebAjOcjwvXEtxseEr')
+  </script>
+  <script src="contact.js"></script>
+  </html>

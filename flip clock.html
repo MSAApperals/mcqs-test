@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .clock {
+            display: flex;
+            gap: 20px;
+        }
+
+        .flip {
+            position: relative;
+            width: 100px;
+            height: 150px;
+            perspective: 1000px;
+        }
+
+        .flip .top, .flip .bottom {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: #333;
+            color: #fff;
+            line-height: 75px;
+            text-align: center;
+            font-size: 50px;
+            border-radius: 5px;
+            backface-visibility: hidden;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .flip .top {
+            top: 0;
+            border-bottom: 2px solid #555;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .flip .bottom {
+            bottom: 0;
+            border-top: 2px solid #555;
+            border-radius: 0 0 5px 5px;
+            transform: rotateX(180deg);
+        }
+
+        .flip .flip-top {
+            position: absolute;
+            top: 0;
+            height: 50%;
+            width: 100%;
+            text-align: center;
+            line-height: 75px;
+            font-size: 50px;
+            backface-visibility: hidden;
+            transform-origin: bottom;
+            transform: rotateX(0deg);
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            background: linear-gradient(to top, #333, #555);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .flip .flip-bottom {
+            position: absolute;
+            bottom: 0;
+            height: 50%;
+            width: 100%;
+            text-align: center;
+            line-height: 75px;
+            font-size: 50px;
+            backface-visibility: hidden;
+            transform-origin: top;
+            transform: rotateX(-180deg);
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            background: linear-gradient(to bottom, #333, #555);
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="flip" id="hours">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+        </div>
+        <div class="flip" id="minutes">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+        </div>
+        <div class="flip" id="seconds">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="flip-top"></div>
+            <div class="flip-bottom"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            flipTo(document.getElementById('hours'), hours);
+            flipTo(document.getElementById('minutes'), minutes);
+            flipTo(document.getElementById('seconds'), seconds);
+        }
+
+        function flipTo(element, value) {
+            const top = element.querySelector('.top');
+            const bottom = element.querySelector('.bottom');
+            const flipTop = element.querySelector('.flip-top');
+            const flipBottom = element.querySelector('.flip-bottom');
+
+            if (top.textContent !== value) {
+                flipTop.textContent = value;
+                flipBottom.textContent = top.textContent;
+                
+                flipTop.style.transform = 'rotateX(-180deg)';
+                flipBottom.style.transform = 'rotateX(0deg)';
+
+                setTimeout(() => {
+                    top.textContent = value;
+                    bottom.textContent = value;
+                    flipTop.style.transform = 'rotateX(0deg)';
+                    flipBottom.style.transform = 'rotateX(180deg)';
+                }, 600);
+            }
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // Initialize the clock immediately
+    </script>
+</body>
+</html>

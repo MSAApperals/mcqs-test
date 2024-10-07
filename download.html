@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer and Downloader</title>
+    <link rel="stylesheet" href="download.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1>My PDF Collection</h1>
+    </header>
+
+    <div class="container">
+        <div class="pdf-container">
+            <div class="pdf-item">
+                <h2 class="pdf-heading">PDF Document 1</h2>
+                <iframe src="Milk Details-1.pdf"></iframe>
+                <button class="download-button" onclick="downloadPDF('Milk Details-1.pdf')">Download PDF 1</button>
+            </div>
+            <div class="pdf-item">
+                <h2 class="pdf-heading">PDF Document 2</h2>
+                <iframe src="sample2.pdf"></iframe>
+                <button class="download-button" onclick="downloadPDF('sample2.pdf')">Download PDF 2</button>
+            </div>
+            <div class="pdf-item">
+                <h2 class="pdf-heading">PDF Document 3</h2>
+                <iframe src="sample3.pdf"></iframe>
+                <button class="download-button" onclick="downloadPDF('sample3.pdf')">Download PDF 3</button>
+            </div>
+            <div class="pdf-item">
+                <h2 class="pdf-heading">PDF Document 4</h2>
+                <iframe src="sample4.pdf"></iframe>
+                <button class="download-button" onclick="downloadPDF('sample4.pdf')">Download PDF 4</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://youtube.com" class="social-icon youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me" class="social-icon whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com" class="social-icon instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="footer-text">Made with ♥ by MSA Creative &copy; MSA 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="download.js"></script>
+</body>
+</html>

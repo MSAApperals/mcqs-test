@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated MCQ Quiz</title>
+    <link rel="stylesheet" href="mcqs.css">
+</head>
+<body>
+  
+    
+    <div id="quiz-container">
+        <!-- Question 1 -->
+        <div class="question-page" id="question-1">
+            <h2>Question 1: What is the capital of France?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 1)">Berlin</li>
+                <li onclick="checkAnswer(this, 1, 1)">Paris</li>
+                <li onclick="checkAnswer(this, 0, 1)">Madrid</li>
+                <li onclick="checkAnswer(this, 0, 1)">Rome</li>
+            </ul>
+            <button onclick="nextQuestion(1)">Next</button>
+            <button onclick="skipQuestion(1)">Skip</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-page" id="question-2">
+            <h2>Question 2: Which planet is known as the Red Planet?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 2)">Venus</li>
+                <li onclick="checkAnswer(this, 1, 2)">Mars</li>
+                <li onclick="checkAnswer(this, 0, 2)">Jupiter</li>
+                <li onclick="checkAnswer(this, 0, 2)">Saturn</li>
+            </ul>
+            <button onclick="previousQuestion(2)">Previous</button>
+            <button onclick="nextQuestion(2)">Next</button>
+            <button onclick="skipQuestion(2)">Skip</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-page" id="question-3">
+            <h2>Question 3: Who wrote "Hamlet"?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 3)">Charles Dickens</li>
+                <li onclick="checkAnswer(this, 0, 3)">Jane Austen</li>
+                <li onclick="checkAnswer(this, 1, 3)">William Shakespeare</li>
+                <li onclick="checkAnswer(this, 0, 3)">Mark Twain</li>
+            </ul>
+            <button onclick="previousQuestion(3)">Previous</button>
+            <button onclick="nextQuestion(3)">Next</button>
+            <button onclick="skipQuestion(3)">Skip</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-page" id="question-4">
+            <h2>Question 4: What is the chemical symbol for water?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 4)">H2</li>
+                <li onclick="checkAnswer(this, 0, 4)">O2</li>
+                <li onclick="checkAnswer(this, 1, 4)">H2O</li>
+                <li onclick="checkAnswer(this, 0, 4)">HO</li>
+            </ul>
+            <button onclick="previousQuestion(4)">Previous</button>
+            <button onclick="nextQuestion(4)">Next</button>
+            <button onclick="skipQuestion(4)">Skip</button>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-page" id="question-5">
+            <h2>Question 5: Which element has the atomic number 1?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 1, 5)">Hydrogen</li>
+                <li onclick="checkAnswer(this, 0, 5)">Oxygen</li>
+                <li onclick="checkAnswer(this, 0, 5)">Carbon</li>
+                <li onclick="checkAnswer(this, 0, 5)">Nitrogen</li>
+            </ul>
+            <button onclick="previousQuestion(5)">Previous</button>
+            <button onclick="nextQuestion(5)">Next</button>
+            <button onclick="skipQuestion(5)">Skip</button>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-page" id="question-6">
+            <h2>Question 6: Who was the first president of the United States?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 6)">Abraham Lincoln</li>
+                <li onclick="checkAnswer(this, 1, 6)">George Washington</li>
+                <li onclick="checkAnswer(this, 0, 6)">Thomas Jefferson</li>
+                <li onclick="checkAnswer(this, 0, 6)">John Adams</li>
+            </ul>
+            <button onclick="previousQuestion(6)">Previous</button>
+            <button onclick="nextQuestion(6)">Next</button>
+            <button onclick="skipQuestion(6)">Skip</button>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question-page" id="question-7">
+            <h2>Question 7: What is the largest mammal in the world?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 7)">Elephant</li>
+                <li onclick="checkAnswer(this, 1, 7)">Blue Whale</li>
+                <li onclick="checkAnswer(this, 0, 7)">Giraffe</li>
+                <li onclick="checkAnswer(this, 0, 7)">Hippopotamus</li>
+            </ul>
+            <button onclick="previousQuestion(7)">Previous</button>
+            <button onclick="nextQuestion(7)">Next</button>
+            <button onclick="skipQuestion(7)">Skip</button>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question-page" id="question-8">
+            <h2>Question 8: Which continent is known as the "Dark Continent"?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 8)">Asia</li>
+                <li onclick="checkAnswer(this, 1, 8)">Africa</li>
+                <li onclick="checkAnswer(this, 0, 8)">South America</li>
+                <li onclick="checkAnswer(this, 0, 8)">Antarctica</li>
+            </ul>
+            <button onclick="previousQuestion(8)">Previous</button>
+            <button onclick="nextQuestion(8)">Next</button>
+            <button onclick="skipQuestion(8)">Skip</button>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question-page" id="question-9">
+            <h2>Question 9: What is the boiling point of water?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 9)">90°C</li>
+                <li onclick="checkAnswer(this, 0, 9)">110°C</li>
+                <li onclick="checkAnswer(this, 1, 9)">100°C</li>
+                <li onclick="checkAnswer(this, 0, 9)">120°C</li>
+            </ul>
+            <button onclick="previousQuestion(9)">Previous</button>
+            <button onclick="nextQuestion(9)">Next</button>
+            <button onclick="skipQuestion(9)">Skip</button>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question-page" id="question-10">
+            <h2>Question 10: Who painted the Mona Lisa?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 1, 10)">Leonardo da Vinci</li>
+                <li onclick="checkAnswer(this, 0, 10)">Vincent van Gogh</li>
+                <li onclick="checkAnswer(this, 0, 10)">Pablo Picasso</li>
+                <li onclick="checkAnswer(this, 0, 10)">Michelangelo</li>
+            </ul>
+            <button onclick="previousQuestion(10)">Previous</button>
+            <button onclick="nextQuestion(10)">Next</button>
+            <button onclick="skipQuestion(10)">Skip</button>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question-page" id="question-11">
+            <h2>Question 11: Which gas do plants primarily absorb during photosynthesis?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 11)">Oxygen</li>
+                <li onclick="checkAnswer(this, 1, 11)">Carbon Dioxide</li>
+                <li onclick="checkAnswer(this, 0, 11)">Nitrogen</li>
+                <li onclick="checkAnswer(this, 0, 11)">Hydrogen</li>
+            </ul>
+            <button onclick="previousQuestion(11)">Previous</button>
+            <button onclick="nextQuestion(11)">Next</button>
+            <button onclick="skipQuestion(11)">Skip</button>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question-page" id="question-12">
+            <h2>Question 12: What is the largest organ in the human body?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 1, 12)">Skin</li>
+                <li onclick="checkAnswer(this, 0, 12)">Heart</li>
+                <li onclick="checkAnswer(this, 0, 12)">Liver</li>
+                <li onclick="checkAnswer(this, 0, 12)">Lung</li>
+            </ul>
+            <button onclick="previousQuestion(12)">Previous</button>
+            <button onclick="nextQuestion(12)">Next</button>
+            <button onclick="skipQuestion(12)">Skip</button>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question-page" id="question-13">
+            <h2>Question 13: What is the speed of light?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 13)">150,000 km/s</li>
+                <li onclick="checkAnswer(this, 0, 13)">200,000 km/s</li>
+                <li onclick="checkAnswer(this, 1, 13)">300,000 km/s</li>
+                <li onclick="checkAnswer(this, 0, 13)">400,000 km/s</li>
+            </ul>
+            <button onclick="previousQuestion(13)">Previous</button>
+            <button onclick="nextQuestion(13)">Next</button>
+            <button onclick="skipQuestion(13)">Skip</button>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question-page" id="question-14">
+            <h2>Question 14: What is the hardest natural substance on Earth?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 14)">Gold</li>
+                <li onclick="checkAnswer(this, 0, 14)">Iron</li>
+                <li onclick="checkAnswer(this, 1, 14)">Diamond</li>
+                <li onclick="checkAnswer(this, 0, 14)">Platinum</li>
+            </ul>
+            <button onclick="previousQuestion(14)">Previous</button>
+            <button onclick="nextQuestion(14)">Next</button>
+            <button onclick="skipQuestion(14)">Skip</button>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question-page" id="question-15">
+            <h2>Question 15: What is the main ingredient in traditional Japanese sushi?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 15)">Chicken</li>
+                <li onclick="checkAnswer(this, 1, 15)">Rice</li>
+                <li onclick="checkAnswer(this, 0, 15)">Noodles</li>
+                <li onclick="checkAnswer(this, 0, 15)">Bread</li>
+            </ul>
+            <button onclick="previousQuestion(15)">Previous</button>
+            <button onclick="nextQuestion(15)">Next</button>
+            <button onclick="skipQuestion(15)">Skip</button>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question-page" id="question-16">
+            <h2>Question 16: Which country is famous for the Taj Mahal?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 16)">Egypt</li>
+                <li onclick="checkAnswer(this, 0, 16)">China</li>
+                <li onclick="checkAnswer(this, 1, 16)">India</li>
+                <li onclick="checkAnswer(this, 0, 16)">Turkey</li>
+            </ul>
+            <button onclick="previousQuestion(16)">Previous</button>
+            <button onclick="nextQuestion(16)">Next</button>
+            <button onclick="skipQuestion(16)">Skip</button>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question-page" id="question-17">
+            <h2>Question 17: What is the smallest unit of life?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 17)">Tissue</li>
+                <li onclick="checkAnswer(this, 1, 17)">Cell</li>
+                <li onclick="checkAnswer(this, 0, 17)">Organ</li>
+                <li onclick="checkAnswer(this, 0, 17)">Molecule</li>
+            </ul>
+            <button onclick="previousQuestion(17)">Previous</button>
+            <button onclick="nextQuestion(17)">Next</button>
+            <button onclick="skipQuestion(17)">Skip</button>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question-page" id="question-18">
+            <h2>Question 18: Who was the first person to walk on the moon?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 1, 18)">Neil Armstrong</li>
+                <li onclick="checkAnswer(this, 0, 18)">Yuri Gagarin</li>
+                <li onclick="checkAnswer(this, 0, 18)">Buzz Aldrin</li>
+                <li onclick="checkAnswer(this, 0, 18)">John Glenn</li>
+            </ul>
+            <button onclick="previousQuestion(18)">Previous</button>
+            <button onclick="nextQuestion(18)">Next</button>
+            <button onclick="skipQuestion(18)">Skip</button>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question-page" id="question-19">
+            <h2>Question 19: What is the longest river in the world?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 1, 19)">Nile</li>
+                <li onclick="checkAnswer(this, 0, 19)">Amazon</li>
+                <li onclick="checkAnswer(this, 0, 19)">Yangtze</li>
+                <li onclick="checkAnswer(this, 0, 19)">Mississippi</li>
+            </ul>
+            <button onclick="previousQuestion(19)">Previous</button>
+            <button onclick="nextQuestion(19)">Next</button>
+            <button onclick="skipQuestion(19)">Skip</button>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question-page" id="question-20">
+            <h2>Question 20: Which is the smallest ocean in the world?</h2>
+            <ul>
+                <li onclick="checkAnswer(this, 0, 20)">Atlantic Ocean</li>
+                <li onclick="checkAnswer(this, 1, 20)">Arctic Ocean</li>
+                <li onclick="checkAnswer(this, 0, 20)">Indian Ocean</li>
+                <li onclick="checkAnswer(this, 0, 20)">Pacific Ocean</li>
+            </ul>
+            <button onclick="previousQuestion(20)">Previous</button>
+            <button onclick="showResults()">Submit</button>
+            <button onclick="skipQuestion(20)">Skip</button>
+        </div>
+
+        <!-- Results Page -->
+        <div id="q">
+            <!-- Questions will be dynamically shown here -->
+            <div id="warning-message" style="color: red; font-weight: bold;"></div>
+        </div>
+        
+        <div id="results-page" style="display: none;">
+            <div id="score"></div>
+            <div id="percentage"></div>
+            <div id="skipped"></div>
+            <div class="home">
+                <button id="home-btn" ><a href="home.html">Home</a></button><!-- Added to show skipped questions -->
+               <a href="home"></a> <button id="select-course-btn">Select Course</button>
+             </div>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+        </div>
+     
+    <script src="mcqs.js"></script>
+</body>
+</html>

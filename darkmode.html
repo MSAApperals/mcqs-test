@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/Dark Mode Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        #theme-toggle {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle">Switch to Dark Mode</button>
+    <h1>Hello, World!</h1>
+    <p>This is a simple page to demonstrate light/dark mode toggle.</p>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Check for saved theme in local storage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+                themeToggleButton.textContent = savedTheme === 'light-mode' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+            } else {
+                body.classList.add('light-mode');
+                themeToggleButton.textContent = 'Switch to Dark Mode';
+            }
+
+            // Toggle theme on button click
+            themeToggleButton.addEventListener('click', () => {
+                if (body.classList.contains('light-mode')) {
+                    body.classList.replace('light-mode', 'dark-mode');
+                    themeToggleButton.textContent = 'Switch to Light Mode';
+                    localStorage.setItem('theme', 'dark-mode');
+                } else {
+                    body.classList.replace('dark-mode', 'light-mode');
+                    themeToggleButton.textContent = 'Switch to Dark Mode';
+                    localStorage.setItem('theme', 'light-mode');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

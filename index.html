@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#course">Courses</a>
+                    <div class="dropdown-content">
+                        <a href="class9.html">Class 9</a>
+                        <a href="class10.html">Class 10</a>
+                        <a href="class11.html">Class 11</a>
+                        <a href="class12.html">Class 12</a>
+                    </div>
+                </li>
+                <li><a href="contactus.html" class="contact">Contact</a></li>
+                <li>
+                
+                </li>
+            </ul>
+            <button id="toggleTheme" class="theme-toggle-btn">
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Picture with Title -->
+        <section id="home">
+            <div class="hero">
+                <img id="heroImage" src="background.jpg" alt="Hero Image">
+                <h1 id="animatedTitle" class="animated-title">LEARN WITH MSA</h1>
+            </div>
+        </section>
+
+        <!-- Class Sections -->
+        <section id="courses">
+            <h1 class="section-heading">Online MCQs Test</h1>
+            <div class="classes">
+                <a href="class9.html" class="class-section">
+                    <h2>Class 9</h2>
+                </a>
+                <a href="class10.html" class="class-section">
+                    <h2>Class 10</h2>
+                </a>
+                <a href="class11.html" class="class-section">
+                    <h2>Class 11</h2>
+                </a>
+                <a href="class12.html" class="class-section">
+                    <h2>Class 12</h2>
+                </a>
+            </div>
+        </section>
+        <div id="past-papers">
+            <h1 class="section-heading">Past Papers</h1>
+            <div class="papers">
+                <a href="download.html" class="paper-section"><h2>Class 9</h2></a>
+                <a href="#" class="paper-section"><h2>Class 10</h2></a>
+                <a href="#" class="paper-section"><h2>Class 11</h2></a>
+                <a href="#" class="paper-section"><h2>Class 12</h2></a>
+            </div>
+        </div>
+<!-- WhatsApp Floating Icon -->
+<a href="https://wa.me/923165218095?text=Hello%2C%20I%20need%20assistance" target="_blank" class="whatsapp-float">
+    <img src="WhatsApp_icon.png.webp" alt="WhatsApp" />
+</a>
+
+</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-icons">
+            <a href="https://youtube.com" target="_blank" class="footer-icon youtube-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-icon instagram-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919876543210" target="_blank" class="footer-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="footer-text">Made with ♥ by MSA Creative &copyMSA 2024. All rights reserved.</p>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>

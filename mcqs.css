@@ -1,0 +1,161 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* General body styling */
+
+
+/* MCQ container styles */
+#quiz-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hide all pages initially */
+.question-page, #results-page {
+    display: none;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+/* Question headings */
+.question-page h2, #results-page h2 {
+    margin-bottom: 20px;
+}
+
+/* List styling for MCQs */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Styling for list items */
+li {
+    background-color: #ff8a00;
+    margin: 10px 0;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+    width: calc(100% - 30px); /* Adjust width to fit container */
+    box-sizing: border-box;
+}
+
+li:hover {
+    transform: scale(1.05);
+    background-color: #ff9f40;
+}
+
+/* Button styles */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #347ddd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Home and Select Course button styles */
+#home-btn, #select-course-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#home-btn:hover, #select-course-btn:hover {
+    background-color: #218838;
+}
+
+#select-course-btn {
+    margin-left: 10px;
+}
+
+/* Correct and wrong answer styles */
+.correct {
+    background-color: green !important;
+    color: white;
+    transform: scale(1.05);
+}
+
+.wrong {
+    background-color: red !important;
+    color: white;
+    transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#results-page {
+    animation: fadeIn 2s forwards;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    #quiz-container {
+        padding: 10px;
+    }
+    
+    li {
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    button {
+        padding: 8px 16px;
+    }
+}
+
+

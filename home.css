@@ -1,0 +1,520 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Theme */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+/* Dark Mode Backgrounds */
+body.dark-mode #courses {
+    background: url('dark\ background.jpg') no-repeat center center;
+}
+
+body.dark-mode #past-papers {
+    background: url('dark\ background.jpg') no-repeat center center;
+}
+body.dark-mode #heroImage {
+    content: url('dark\ background.jpg');
+}
+
+/* Light Mode Backgrounds */
+body.light-mode #courses {
+    background: url('background\ 3.jpg') no-repeat center center;
+}
+
+body.light-mode #past-papers {
+    background: url('background\ 3.jpg') no-repeat center center;
+}
+body.light-mode #heroImage {
+    content: url('background.jpg');
+}
+
+/* Header styles */
+header {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    color: #645d5d;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between; /* Space out logo and menu */
+    background-image: url('Designer.png'); /* Set logo as background image */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain; /* Adjust size to fit within header */
+}
+* Ensure no extra space or margins around the logo */
+header::before {
+    content: '';
+    display: block;
+    width: 150px; /* Adjust based on logo size */
+    height: 100px; /* Adjust based on logo size */
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url('Designer.png'); /* Set logo as background image */
+    background-size: contain; /* Adjust size to fit within header */
+    background-repeat: no-repeat;
+    background-position: left center;
+    z-index: 1; /* Ensure it stays behind text */
+}
+
+
+.theme-toggle-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    z-index: 10;
+}
+
+.theme-toggle-btn:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(1);
+}
+@media (min-width: 1024px) {
+    .theme-toggle-btn {
+        right: auto;
+        left: 790px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .theme-toggle-btn {
+        top: 2px;
+        right: 40px;
+        left: auto; /* Reset left positioning */
+        font-size: 18px; /* Slightly smaller font size for mobile */
+        padding: 8px 12px; /* Adjust padding for mobile */
+    }
+}
+/* Icon Transition */
+.theme-toggle-btn i {
+    transition: opacity 0.3s;
+}
+
+/* Dark Mode Icon Change */
+body.dark-mode .theme-toggle-btn i.fa-moon {
+    opacity: 0;
+}
+
+body.dark-mode .theme-toggle-btn i.fa-sun {
+    opacity: 1;
+}
+
+/* Light Mode Icon Change */
+body.light-mode .theme-toggle-btn i.fa-sun {
+    opacity: 0;
+}
+
+body.light-mode .theme-toggle-btn i.fa-moon {
+    opacity: 1;
+}
+/* Remove default margin and padding for header content */
+nav {
+    margin-left: 160px; /* Offset to make space for logo */
+    display: flex;
+    width: calc(100% - 160px); /* Adjust to fit remaining space */
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #4b4141;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    overflow: hidden;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 60px; /* Space to avoid overlap with fixed header */
+}
+
+.hero img {
+    width: 100%;
+    height: 60%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition */
+}
+
+.hero img:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+.animated-title {
+    position:relative;
+    top: 40%;
+    color: #000000;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    animation: flyIn 2s ease-out forwards;
+}
+@keyframes scale-in {
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero img {
+        height: 60vh;
+        width: 100hv; /* Decrease the height to 50% of the viewport height on desktop */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero img {
+        height: 40vh; /* Reset height to auto for smaller screens */
+    }
+}
+
+.animated-title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: #070606;
+    text-shadow: 0px 3px 5px;
+    animation: fly-in 2s ease-out;
+}
+body.dark-mode #home .animated-title {
+    color: #fff; /* Change title color to white in dark mode */
+}
+
+@keyframes fly-in {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+/* Courses Section */
+.section-heading {
+    font-size: 36px; /* Increased font size for better visibility */
+    margin-bottom: 30px;
+    text-align: center;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s forwards; /* Fade-in effect */
+    color: #333;
+    text-shadow: 2px 2px 5px ; /* Shadow effect on text */
+}
+body.dark-mode .section-heading {
+    color: #fff;
+}
+.classes, .papers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.class-section, .paper-section {
+    background: rgba(0, 0, 0, 0.8); /* Black background with slight transparency */
+    padding: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    width: 45%;
+    max-width: 200px;
+    text-align: center;
+    border: 2px solid #00BFFF; /* Border color */
+    opacity: 0; /* Start invisible */
+    animation: scaleUp 1s ease forwards; /* Scale-up effect */
+    animation-delay: 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+.class-section:hover, .paper-section:hover {
+    background: rgba(0, 0, 0, 1); /* Full black background on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    border-color: #00BFFF; /* Border color on hover */
+}
+
+.class-section h2, .paper-section h2 {
+    margin: 0;
+    font-size: 20px;
+    animation: textPop 0.5s ease-in-out forwards;
+    transition: color 0.3s ease;
+}
+
+.class-section:hover h2, .paper-section:hover h2 {
+    color: #00BFFF;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Scale-up Animation */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Text Animation */
+@keyframes textPop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Online MCQs Section */
+#courses {
+    background: url('background 3.jpg') no-repeat center center/cover;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px ;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#courses:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px ;
+}
+
+/* Past Papers Section */
+#past-papers {
+    background: url('background\ 3.jpg') no-repeat center center/cover;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 40px;
+}
+
+#past-papers:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px ;
+}
+/* Floating WhatsApp Icon */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.whatsapp-float img {
+    width: 60px; /* Size of the icon */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular icon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for effect */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.whatsapp-float:hover::after {
+    content: "Whatsapp Us";
+    position: absolute;
+    bottom: 70px;
+    background-color: #25d366;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    left: -29px;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 0, 0.1); /* Slightly transparent background */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+    margin-bottom: 10px; /* Space between icons and text */
+}
+
+.footer-icon {
+    color: #333; /* Default icon color */
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Individual icon hover colors */
+.youtube-icon:hover {
+    color: #FF0000; /* YouTube red */
+}
+
+.instagram-icon:hover {
+    color: #C13584; /* Instagram purple */
+}
+
+.whatsapp-icon:hover {
+    color: #25D366; /* WhatsApp green */
+}
+
+.footer-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Footer Text Styling */
+.footer-text {
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 0; /* Padding for spacing */
+}
+/* Dark Mode Footer Text and Icons */
+body.dark-mode .footer-text {
+    color: #f0f0f0;
+}
+
+body.dark-mode .footer-icon {
+    color: #f0f0f0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .class-section {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .class-section {
+        width: calc(100% - 40px);
+    }
+
+    .hero img {
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero img {
+        width: 80%;
+    }
+}
